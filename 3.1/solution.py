@@ -1,9 +1,4 @@
 from itertools import cycle
-# 17  16  15  14  13
-# 18   5   4   3  12
-# 19   6   1   2  11
-# 20   7   8   9  10
-# 21  22  23---> ...
 
 def get_corners(n):
     i = 1
@@ -38,6 +33,7 @@ n = 325489
 for i in xrange(1, n):
     if i in corners:
         go = actions.next()
+    # Find next point
     x, y = go(x, y)
 distance = abs(x) + abs(y)
 print distance
