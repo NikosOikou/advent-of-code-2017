@@ -35,7 +35,7 @@ x = 0
 y = 0
 n = 325489
 
-for i in xrange(2, n+1):
+for i in xrange(1, n):
     if i in corners:
         go = actions.next()
     x, y = go(x, y)
