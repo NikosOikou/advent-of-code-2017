@@ -2,7 +2,6 @@ from itertools import cycle
 from collections import defaultdict
 
 def get_corners(n):
-    i = 1
     j = 1
     corners = [j]
     for i in range(1, n):
