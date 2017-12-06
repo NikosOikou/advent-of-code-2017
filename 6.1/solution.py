@@ -13,8 +13,8 @@ while True:
         if idx > n_banks - 1:
             idx = 0
         banks[idx] += 1
-    s = str(banks) 
-    if s in states_seen:
+    state = str(banks)
+    if state in states_seen:
         break
-    states_seen.add(s)
+    states_seen.add(state)
 print count
