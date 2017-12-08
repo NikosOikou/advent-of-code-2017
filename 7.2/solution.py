@@ -20,12 +20,13 @@ def get_children(parent):
     return [child for child in parent_by_child if parent_by_child[child] == parent]
 
 def get_edges():
-    # nodes without children and without nephews
+    # Nodes without children and without nephews
     result = []
     for child, parent in parent_by_child.iteritems():
-        include = True
         if get_children(child):
             continue
+        include = True
+        # Check that none of the siblings has children
         for sibling in get_children(parent):
             if get_children(sibling):
                 include = False
@@ -43,7 +44,6 @@ while not stop:
         parent = parent_by_child[child]
         children = get_children(parent)
         children_weights = [weights[c] for c in children]
-
 
         if len(set(children_weights)) == 1:
             # Simplify tree
