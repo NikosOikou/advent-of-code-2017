@@ -1,15 +1,15 @@
-programs_with_base = set()
-all_programs = set()
+all_children = set()
+all_nodes = set()
 
 for line in open('input.txt'):
-    all_programs.add(line.split()[0])
+    all_nodes.add(line.split()[0])
 
     if '->' in line:
-        programs = line.split('->')[1].split(',')
+        children = line.split('->')[1].split(',')
 
-        for program in programs:
-            programs_with_base.add(program.strip())
+        for c in children:
+            all_children.add(c.strip())
 
-for program in all_programs:
-    if program not in programs_with_base:
-        print program
+for node in all_nodes:
+    if node not in all_children:
+        print node

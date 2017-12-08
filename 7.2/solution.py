@@ -67,8 +67,6 @@ while not stop:
 
             if w == max_weight:
                 print starting_weights[c] - diff
-
             else:
                 print starting_weights[c] + diff
-
             break
