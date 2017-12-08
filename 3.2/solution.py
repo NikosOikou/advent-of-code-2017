@@ -36,7 +36,7 @@ def downright(x, y):
     return x+1, y-1
 
 actions = cycle([right, up, left, down])
-
+neighbours = (right, rightup, up, upleft, left, leftdown, down, downright)
 corners = get_corners(600)
 x = 0
 y = 0
@@ -50,7 +50,7 @@ for i in xrange(1, n):
     # Find next point
     x, y = go(x, y)
     value = 0
-    for neighbour in (right, rightup, up, upleft, left, leftdown, down, downright):
+    for neighbour in neighbours:
         value += grid[neighbour(x, y)]
     grid[(x, y)] = value
     if value > n:

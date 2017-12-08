@@ -36,5 +36,3 @@ for i in xrange(1, n):
     x, y = go(x, y)
 distance = abs(x) + abs(y)
 print distance
-
-
