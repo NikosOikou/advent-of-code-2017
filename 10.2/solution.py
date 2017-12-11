@@ -9,15 +9,15 @@ for n in chars:
     sublist = []
     for i in range(n):
         idx = current_idx + i
-        idx -= divmod(idx, 256)[0] * 256
+        idx = idx % 256
         sublist.append(t[idx])
     sublist = list(reversed(sublist))
     for i in range(n):
         idx = current_idx + i
-        idx -= divmod(idx, 256)[0] * 256
+        idx = idx % 256
         t[idx] = sublist[i]
     current_idx += n + skip_size
-    current_idx -= divmod(current_idx, 256)[0] * 256
+    current_idx = current_idx % 256
     skip_size += 1
 
 result = []
