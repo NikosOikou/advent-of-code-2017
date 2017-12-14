@@ -27,4 +27,4 @@ for i in range(16):
     r = reduce(lambda x, y: x ^ y, next_sixteen)
     result.append(r)
 
-print ''.join(map(lambda x: x[2:], map(hex, result)))
+print ''.join(['{:02x}'.format(x) for x in result])
